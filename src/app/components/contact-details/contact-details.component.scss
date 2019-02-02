@@ -1,0 +1,141 @@
+$button-background-color: #fff;
+$button-border-color: #b3b3b3;
+$divisor-color: #e6e6e6;
+$input-border-color: #bfbfbf;
+$label-color: #808080;
+$link-color: #0068da;
+$link-hover-color: #00438B;
+
+
+:host {
+    box-sizing: border-box;
+    min-width: 700px;
+    overflow: auto;
+    padding: 75px 70px 50px 50px;
+}
+
+span.fullname {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+input,
+textarea {
+    border: 1px solid $input-border-color;
+    border-radius: 4px;
+}
+
+.contact-name {
+    display: inline-block;
+
+    & > div {
+        float: left;
+        position: relative;
+    }
+    input {
+        font-size: 32px;
+        font-weight: 400;
+        margin: -6px 16px 0px -5px;
+        padding: 5px 4px 12px;
+        width: 232px;
+
+        & + label {
+            bottom: -26px;
+            color: $label-color;
+            left: -7px;
+            position: absolute;
+        }
+    }
+
+    & + .additional-info {
+        padding-top: 84px;
+    }
+}
+
+.additional-info {
+    padding-top: 100px;
+    width: 100%;
+
+    & > div {
+        border-bottom: 1px solid $divisor-color;
+        box-sizing: border-box;
+        padding: 15px;
+        width: 100%;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        label {
+            color: $label-color;
+            float: left;
+            font-size: 14px;
+            line-height: 24px;            
+            text-align: right;
+            width: 105px;
+        }
+
+        input,
+        textarea {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 24px;
+            margin-left: 8px;
+            margin-top: -6px;
+            padding: 5px 3px;
+            width: 355px;
+        }
+
+        input {
+            margin-bottom: -6px;
+        }
+
+        textarea {
+            margin-bottom: -9px;
+        }
+
+        p {
+            display: inline-block;
+            font-size: 16px;
+            line-height: 24px;
+            margin: 0 0 0 12px;
+            white-space: pre-wrap;
+
+            a {
+                color: $link-color;
+
+                &:hover {
+                    color: $link-hover-color;
+                }
+            }
+        }
+    }
+}
+
+button {
+    background-color: $button-background-color;
+    border: solid 1px $button-border-color;
+    border-radius: 8px;   
+    bottom: 16px;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    padding: 6px 15px;
+    position: absolute;
+
+    form > & {
+        padding: 6px 25px;
+        right: 70px;
+    }
+}
+
+.no-card {
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-top: -8px;
+    position: relative;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}

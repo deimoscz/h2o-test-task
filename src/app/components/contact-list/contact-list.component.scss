@@ -1,0 +1,70 @@
+$delete-icon-background-color: #ff3a30;
+$delete-icon-color: #fff;
+$letter-color: #737373;
+$list-background-color: #e1e2e4;
+$selected-item-background-color: #0463e1;
+$selected-item-color: #fff;
+$title-line-color: #c3c3c3;
+
+:host {
+    background-color: $list-background-color;
+    box-sizing: border-box;
+    font-size: 14px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 75px;
+}
+ul {
+    margin-block-start: 0;
+    padding-inline-start: 0;
+}
+
+li > span.letter {
+    border-bottom: 2px solid $title-line-color;
+    color: $letter-color;
+    display: block;
+    font-weight: 200;
+    margin-left: 14px;
+    padding: 10px 0 3px 2px;
+}
+
+li.name {
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    cursor: hand;    
+    font-weight: 400;
+    height: 30px;
+    padding: 7px 40px;
+    position: relative;
+
+    &.selected {
+        background-color: $selected-item-background-color;
+        color: $selected-item-color;
+    }
+
+    &.noname {
+        font-style: italic;
+    }
+
+    i {
+        background-color: $delete-icon-background-color;
+        border-color: $delete-icon-background-color;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 10px 10px;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+
+        &::after {
+            background-color: $delete-icon-color;
+            content: '';
+            height: 3px;
+            margin-left: -5px;
+            margin-top: -1.5px;            
+            position: absolute;
+            width: 10px;
+        }
+    }
+}

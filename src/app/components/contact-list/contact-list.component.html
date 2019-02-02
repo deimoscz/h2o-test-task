@@ -1,0 +1,16 @@
+<ul>
+  <li *ngFor="let item of getContactMap(contacts) | keyvalue">
+    <span class="letter">{{item.key || 'Other'}}</span>
+    <ul>
+      <li *ngFor="let contact of item.value"
+        class="name"
+        [class.selected]="contact.id === activeContactId"
+        [class.noname]="!hasName(contact)"
+        (click)="onContactSelect(contact.id)">
+        {{getFullName(contact)}}
+        <i *ngIf="contact.id === activeContactId && isInEditMode"
+        (click)="onRemoveClick(contact)"></i>
+      </li>
+    </ul>
+  </li>
+</ul>

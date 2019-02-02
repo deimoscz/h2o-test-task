@@ -1,0 +1,23 @@
+app-contact-list {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 30%;
+}
+
+app-contact-details {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70%;
+}
+
+#main {
+    height: 100%;
+    min-height: 600px;
+    min-width: 960px;
+    position: absolute;
+    width: 100%;
+}

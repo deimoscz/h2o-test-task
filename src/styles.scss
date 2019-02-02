@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/normalize.min.css';
+
+$base-text-color: #222;
+
+body {
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+    color: $base-text-color;
+
+    button {
+        color: $base-text-color;
+    }
+}

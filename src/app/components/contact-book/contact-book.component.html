@@ -1,0 +1,14 @@
+<div id="main">
+  <app-contact-list
+    [contacts]="contacts"
+    [isInEditMode]="isInEditMode"
+    (viewContactRequest)="onViewContactRequest($event)"
+    (deleteContactRequest)="onDeleteContactRequest($event)"
+    [activeContactId]="activeContact ? activeContact.id : null"
+  ></app-contact-list>
+  <app-contact-details
+    [(isInEditMode)]="isInEditMode"
+    [contact]="activeContact"
+    (createContactRequest)="onCreateContactRequest()"
+  ></app-contact-details>
+</div>

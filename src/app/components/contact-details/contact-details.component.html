@@ -1,0 +1,56 @@
+<form *ngIf="contact" [formGroup]="contactForm"
+  (ngSubmit)="onSubmit()" [class.readonly]="!isInEditMode">
+  
+  <span class="fullname" *ngIf="!isInEditMode">
+    {{contactForm.value.firstName}} {{contactForm.value.lastName}}
+  </span>
+
+  <div *ngIf="isInEditMode" class="contact-name">
+    <div>
+      <input formControlName="firstName"/>
+      <label>first name</label>
+      </div>
+
+    <div>
+      <input formControlName="lastName"/>
+      <label>last name</label>
+    </div>
+  </div>
+  
+  <div class="additional-info">
+    <div>
+      <label>phone:</label>
+      <input formControlName="phone" *ngIf="isInEditMode">
+      <p *ngIf="!isInEditMode">{{formatPhone(contactForm.value.phone)}}</p>
+    </div>
+    
+    <div>
+      <label>email:</label>
+      <input formControlName="email" *ngIf="isInEditMode">
+      <p *ngIf="!isInEditMode"><a href="mailto:{{contactForm.value.email}}"
+        >{{contactForm.value.email}}</a></p>
+    </div>
+    
+    <div>
+      <label>address:</label>
+      <textarea formControlName="address"
+        *ngIf="isInEditMode" rows="3"></textarea>
+      <p *ngIf="!isInEditMode">{{contactForm.value.address}}</p>
+    </div>
+    
+    <div>
+      <label>note:</label>
+      <textarea formControlName="note" *ngIf="isInEditMode" rows="4"></textarea>
+      <p *ngIf="!isInEditMode">{{contactForm.value.note}}</p>
+    </div>
+  </div>
+
+  <button *ngIf="!isInEditMode" (click)="setEditMode(true)">Edit</button>
+  <button *ngIf="isInEditMode" type="submit">Done</button>
+</form>
+
+<button (click)="onAddRequest()">+</button>
+
+<div class="no-card" *ngIf="!contact">
+  No Card Selected
+</div>
